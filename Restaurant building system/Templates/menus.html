@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Menu</title>
+  <style>
+    body {
+      margin-top: 50px;
+      font-family: 'Arial', sans-serif;
+      background: #1d1d1d;
+      color: #fff;
+      background-image: url(abour.jpg);
+      background-size: 100%;
+    }
+
+    .menu-container {
+      top: 5px;
+      max-width: 800px;
+      margin: auto;
+      padding: 40px 20px;
+      background-color: #1a1a1a;
+      border: 5px solid #f0c040;
+      border-radius: 12px;
+    }
+    .navi{
+        top:10px;
+        margin-left: 500px;
+        position: absolute;
+    }
+    .navi a{
+    font-size: 1.1em;
+    color: white;
+    text-decoration: none;
+    margin-right: 40px;
+    font-weight: 500;
+    transition: 2s;
+}
+.navi a:hover{
+    color: rgb(8, 159, 51);
+    cursor: pointer;
+}
+
+    h1 {
+      text-align: center;
+      color: #fff;
+      font-size: 3rem;
+      margin-bottom: 0;
+    }
+
+    .subheading {
+      text-align: center;
+      color: #f0c040;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .section {
+      margin-top: 30px;
+    }
+
+    .section-title {
+      background-color: #f0c040;
+      color: #000;
+      display: inline-block;
+      padding: 6px 14px;
+      font-weight: bold;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .menu-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .menu-item {
+      display: flex;
+      justify-content: space-between;
+      margin: 8px 0;
+      border-bottom: 1px solid #444;
+      padding-bottom: 5px;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 1rem;
+      color: #f0c040;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="menu-container">
+  <header class="navi">
+      <a href="{{ url_for('home') }}">HOME</a>
+      <a href="{{ url_for('about') }}">ABOUT</a>
+      <a href="{{ url_for('menus') }}">MENU</a>
+      <a href="{{ url_for('menu') }}">ORDER</a>
+     <a href="{{ url_for('contact') }}">CONTACT</a>
+  </header>
+    <h1>FOOD MENU</h1>
+    <div class="subheading">Thenu's Restaurant</div>
+
+    <div class="section">
+      <div class="section-title">MAIN COURSE</div>
+      <ul class="menu-list">
+        <li class="menu-item"><span>Butter Chicken</span><span>$70</span></li>
+        <li class="menu-item"><span>Spaghetti Carbonara</span><span>$68</span></li>
+        <li class="menu-item"><span> Grilled Salmon with Lemon Butter</span><span>$85</span></li>
+        <li class="menu-item"><span>Paneer Tikka Masala</span><span>$72</span></li>
+        <li class="menu-item"><span>Beef Stroganoff</span><span>$80</span></li>
+        <li class="menu-item"><span>Chicken Alfredo Pasta</span><span>$74</span></li>
+        <li class="menu-item"><span>Vegetable Biriyani</span><span>$90</span></li>
+        <li class="menu-item"><span>Teriyaki Chicken Bowl</span><span>$75</span></li>
+        
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-title">APPETIZERS</div>
+      <ul class="menu-list">
+        <li class="menu-item"><span>spring Rolls</span><span>$50</span></li>
+        <li class="menu-item"><span>Chicken Satay</span><span>$55</span></li>
+        <li class="menu-item"><span>Bruschetta</span><span>$45</span></li>
+        <li class="menu-item"><span>Hummus with pita</span><span>$42</span></li>
+        <li class="menu-item"><span>Stuffed Mushrooms</span><span>$48</span></li>
+        <li class="menu-item"><span>Deviled Eggs</span><span>$38</span></li>
+        <li class="menu-item"><span>Paneer Tikka</span><span>$52</span></li>
+        <li class="menu-item"><span>Garlic Bread</span><span>$40</span></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-title">DRINKS</div>
+      <ul class="menu-list">
+        <li class="menu-item"><span>Mango Lassi</span><span>$28</span></li>
+        <li class="menu-item"><span>Iced Matcha Latte</span><span>$32</span></li>
+        <li class="menu-item"><span>Watermelon Juice</span><span>$24</span></li>
+        <li class="menu-item"><span>Fresh Lime soda</span><span>$33</span></li>
+        <li class="menu-item"><span>Strawberry smoothie</span><span>$23</span></li>
+        <li class="menu-item"><span>Cold Brew Coffee</span><span>$29</span></li>
+        <li class="menu-item"><span>Masala chai</span><span>$22</span></li>
+        <li class="menu-item"><span>virigin Mogito</span><span>$26</span></li>
+      </ul>
+    </div>
+    <div class="section">
+      <div class="section-title">DESSERTS</div>
+      <ul class="menu-list">
+        <li class="menu-item"><span>Chocolate Lava cake</span><span>$50</span></li>
+        <li class="menu-item"><span>Gulab Jamun</span><span>$38</span></li>
+        <li class="menu-item"><span>Cheesecake</span><span>$48</span></li>
+        <li class="menu-item"><span>Tiramisu</span><span>$52</span></li>
+        <li class="menu-item"><span>Rasmalai</span><span>$40</span></li>
+        <li class="menu-item"><span>Apple Pie</span><span>$45</span></li>
+        <li class="menu-item"><span>Brownies</span><span>$43</span></li>
+        <li class="menu-item"><span>Panna Cotta</span><span>$ 49</span></li>
+      </ul>
+    </div>
+    <div class="section">
+      <div class="section-title">SNACKS</div>
+      <ul class="menu-list">
+        <li class="menu-item"><span>French Fries</span><span>$30</span></li>
+        <li class="menu-item"><span>Samosa</span><span>$20</span></li>
+        <li class="menu-item"><span>Nachos with Cheese</span><span>$32</span></li>
+        <li class="menu-item"><span>Popcorn</span><span>$25</span></li>
+        <li class="menu-item"><span>Onion Rings</span><span>$28</span></li>
+        <li class="menu-item"><span>Pakoras</span><span>$26</span></li>
+        <li class="menu-item"><span>Chicken Nuggets</span><span>$33</span></li>
+        <li class="menu-item"><span>Veggie Sandwich</span><span>$35</span></li>
+      </ul>
+    </div>
+
+    <div class="footer">📞 +123-456-7890</div>
+  </div>
+</body>
+</html>

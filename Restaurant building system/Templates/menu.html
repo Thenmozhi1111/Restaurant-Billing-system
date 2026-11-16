@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    img{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    filter: blur(5px);
+}
+.navi{
+    top:5px;
+    margin-left: 900px;
+    position: absolute;
+
+}
+.navi a{
+    font-size: 1.1em;
+    color: black;
+    text-decoration: none;
+    margin-right: 40px;
+    font-weight: 500;
+    transition: 2s;
+}
+.navi a:hover{
+    color: rgb(8, 159, 51);
+    cursor: pointer;
+}
+.form{
+  position: absolute;
+  top: 250px;
+  left: 400px;
+  text-align: left;
+  color: black;
+  background-color: bisque;
+  font-size: 20px;
+  width: 600px;
+  height: 300px;
+  border: 2px solid black;
+}
+.form h2{
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 50px;
+}
+.table{
+  position: absolute;
+  top: 80px;
+  left: 20px;
+  text-align: left;
+  color: black;
+  font-size: 20px;
+  margin: 30px;
+  padding: 20px;
+  
+
+}
+.table input{
+  border: 2px solid black;
+  width: 250px;
+  height: 20px;
+}
+.grid-container{
+  background-color: beige;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+}
+.grid-item{
+  padding: 5px;
+}
+.butt{
+  position: absolute;
+  left: 700px;
+  width: 200px;
+  height: 50px;
+  background-color: cornflowerblue;
+  color: antiquewhite;
+  font-size: 30px;
+  border-radius:10px;
+}
+.butt:hover{
+  cursor: pointer;
+  background-color:palevioletred ;
+
+}
+  </style>
+</head>
+<body>
+  <div id="aaa">
+        <img src="{{ url_for('static', filename='323.webp') }}">
+
+       <header class="navi">
+            <a href="{{ url_for('home') }}">HOME</a>
+            <a href="{{ url_for('about') }}">ABOUT</a>
+            <a href="{{ url_for('menus') }}">MENU</a>
+            <a href="{{ url_for('menu') }}">ORDER</a>
+            <a href="{{ url_for('contact') }}">CONTACT</a>
+        </header>
+  </div>
+  <div class="form">
+  <form action="/order" method="POST">
+    <h2>LOGIN</h2>
+  <table class="table">
+    <tr>
+  <td><label for="text">Enter your name</label></td>
+  <td><input type="text" name="name" placeholder="Your Name" required><br></td>
+  </tr>
+  <tr>
+  <td><label for="text">Enter your mobile number</label></td>
+  <td><input type="text" name="phone" placeholder="Phone Number" required><br></td>
+  </tr>
+  <tr>
+  <td><label for="text">Choose a Table</label></td>
+  <td><input list="tab" name="table_id" placeholder="Table ID" required><br></td>
+  <datalist id="tab">
+    <option value="1">
+    <option value="2">
+    <option value="3">
+  </datalist>
+  </tr>
+  </table>
+  </div>
+<div class="grid-container">
+  {% for item in menu_items %}
+    <div class="grid-item">
+      <input type="checkbox" name="item" value="{{ item.item_id }}">
+      {{ item.name }} - ₹{{ item.price }}
+      Qty: <input type="number" name="quantity" value="1" min="1">
+    </div>
+  {% endfor %}
+</div>  
+  <br><button class="butt" type="submit">Place Order</button>
+</form>
+
+</body>
+</html>
+
+
+
+

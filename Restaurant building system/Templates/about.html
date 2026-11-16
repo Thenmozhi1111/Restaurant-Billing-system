@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - Catering</title>
+  <style>
+    *{
+        background-color: rgb(29, 29, 29);
+    }
+   img{
+    position: relative;
+    height: 100vh;
+    width: 750px;
+    left: 750px;
+    top: 30px;
+    filter: blur(3px);
+   }
+   .navi{
+    top:10px;
+    margin-left: 900px;
+    position: absolute;
+
+    }
+    .navi a{
+        font-size: 1.1em;
+        color: white;
+        text-decoration: none;
+        margin-right: 40px;
+        font-weight: 500;
+        transition: 2s;
+    }
+    .navi a:hover{
+        color: rgb(8, 159, 51);
+        cursor: pointer;
+    }
+    .stats{
+      position: absolute;
+      top: 150px;
+      left:20px;
+      text-decoration: none;
+      font-size: 30px;
+      font-weight: bold;
+      color:bisque;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+    .text-section{
+      position: absolute;
+      top: 250px;
+      left: 20px;
+      color: white;
+      font-size: 20px;
+      font-weight: bolder;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    h2{
+      font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-size: 100px;
+      color: antiquewhite;
+      font-weight: 200;
+    }
+    p{
+      position: absolute;
+      top:200px;
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+    <header class="navi">
+        <a href="{{ url_for('home') }}">HOME</a>
+        <a href="{{ url_for('about') }}">ABOUT</a>
+        <a href="{{ url_for('menus') }}">MENU</a>
+        <a href="{{ url_for('menu') }}">ORDER</a>
+        <a href="{{ url_for('contact') }}">CONTACT</a>
+    </header>
+
+
+  <section class="about-content">
+    <div class="image-section">
+      <<img src="{{ url_for('static', filename='abour.jpg') }}">
+      <div class="stats">
+        <div class="stat">10k+ Dishes Served</div>
+        <div class="stat">50k+ Happy Customers</div>
+      </div>
+    </div>
+    <div class="text-section">
+      <h2><span>All In Good Taste</span></h2>
+      <p><span>We don't made just food. We make people's Experience.<br>It was Build on the belief that food should be special,<br>and we carry that belief into everything we do</span></p>
+    </div>
+  </section>
+
+ 
+
+</body>
+</html>
